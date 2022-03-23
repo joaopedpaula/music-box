@@ -1,4 +1,4 @@
-![REACT BOOTCAMP](https://user-images.githubusercontent.com/53583561/159532969-0d14db9b-71b7-4bcb-af4a-c7cfcf325cd6.png)
+![music-box-banner](https://user-images.githubusercontent.com/53584199/159744384-70d90882-ccae-4369-bfc9-6d7561714f51.png)
 
 
 # Music Box 
