@@ -1,5 +1,4 @@
-![music-box-banner](https://user-images.githubusercontent.com/53584199/159744384-70d90882-ccae-4369-bfc9-6d7561714f51.png)
-
+![music-box-banner](https://user-images.githubusercontent.com/53584199/159744671-420c18b0-5a06-4fd7-a8c8-7a604ec07dd8.png)
 
 # Music Box 
 ![Badge](https://img.shields.io/badge/Code-react-0366d6?&logo=react) 
