@@ -1,6 +1,6 @@
 import React from "react"; // importando biblioteca React das dependências do projeto
 import ReactDOM from "react-dom/client"; // importando biblioteca ReactDOM das dependências do projeto
-import App from "./App"; // importanto componente App
+import App from "./App"; // importando componente App
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 // invocando a biblioteca do ReactDOM (versão 18.0, a mais recente) para renderizarmos o componente React utilizando a função .createRoot().render()
