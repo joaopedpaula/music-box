@@ -2,10 +2,18 @@ import React from "react";
 import editIcon from "../html-css-template/imagens/edit-icon.png"; // importando imagem com ícone de EDITAR como uma variável para ser utilizada
 import deleteIcon from "../html-css-template/imagens/delete-icon.png"; // importando imagem com ícone de DELETAR como uma variável para ser utilizada
 
+import capaPadrao from "../html-css-template/imagens/capa.png"; // importando imagem de capa padrão para usarmos caso não haja um endereço de imagem na API
+
 function ItemMusica(props) { // componente ItemMusica que recebe parâmetros como "props" e retorna fragmento JSX
+
+  // constante que representa uma configuração de estilo CSS para alterar o background-image através do JS  
+  const backgroundImage = {
+    backgroundImage: `url(${props.imagem ? props.imagem : capaPadrao})` // interpolando a URL da imagem, utilizando um ternário para verificar se a URL da imagem deve ser a capaPadrao, caso a imagem da API (props.imagem) esteja vazia
+  } 
+  
   return (
     <>
-      <div className="card-music">  {/* componente com classe "card-music", utilizando className do React pois class é reservada do sistema */}
+      <div className="card-music" style={backgroundImage}>  {/* sobrescrevendo imagem de fundo com a configuração de estilo que criamos acima, renderizando a imagem da API ou a capa padrão caso a API não possua imagem */}
         <div className="icons">  {/* componente com classe "icons", utilizando className do React pois class é reservada do sistema */}
           <img src={editIcon} alt="" /> {/* utilizando variável que representa a imagem com ícone de EDITAR */}
           <img src={deleteIcon} alt="" /> {/* utilizando variável que representa a imagem com ícone de DELETAR */}
