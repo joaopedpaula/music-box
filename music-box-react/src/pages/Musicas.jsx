@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import ItemMusica from "../components/ItemMusica"; // importando o componente de card de música como "ItemMusica"
 import Menu from "../components/Menu"; // importando o componente de header como "Menu"
 
+import { useNavigate } from 'react-router-dom'; // importando componente para navegar entre as rotas da biblioteca "react-router-dom"
+
 import api from "../api"; // importando a instância do axios que criamos em api.js
 
 // componente Musicas que retorna fragmento JSX
 function Musicas() {
+
+  const navegador = useNavigate(); // criando instância do useNavigate para navegarmos entre as rotas
 
   /* 
     - o useState serve para definirmos estados em nossos componentes React
@@ -76,13 +80,17 @@ function Musicas() {
 
   return (
     <>
-      <Menu /> {/* utilizando componente de Menu */}
+      {/* 
+        <Menu /> comentando componente de Menu, pois ele já está sendo renderizado em "Rotas.jsx", sendo padrão para todas as páginas
+      */}
       <div className="container">
         {/* componente com classe "container", utilizando className do React pois class é reservada do sistema */}
-        <div className="filter">
-          {/* componente com classe "filter", utilizando className do React pois class é reservada do sistema */}
-          <button className="btn">Adicionar</button>
-          {/* componente com classe "btn", utilizando className do React pois class é reservada do sistema */}
+        <div className="filter"> {/* componente com classe "filter", utilizando className do React pois class é reservada do sistema */}
+          <button onClick={() => { navegador('/adicionar') }} className="btn">Adicionar</button> {/* componente com classe "btn", utilizando className do React pois class é reservada do sistema */}
+          {/* 
+            Ao clicar no botão, ele chama uma arrow function para executar uma chamada na instância do useNavigate, navegando para a rota "/adicionar", assim, o BrowserRouter irá verificar a chamada, e renderizar o componente correspondente àquela rota 
+            OBS: useNavigate() só funciona se o componente Musicas.jsx estiver dentro do BrowserRouter, senão ele não conseguirá referenciar uma das rotas da aplicação 
+          */}
         </div>
       </div>
       <div className="container">
@@ -107,6 +115,7 @@ function Musicas() {
                   musica={item.titulo}      // utilizando o atributo "titulo" do item atual do vetor como parâmetro "musica" 
                   artista={item.artista}    // utilizando o atributo "artista" do item atual do vetor como parâmetro "artista"
                   categoria={item.genero}   // utilizando o atributo "genero" do item atual do vetor como parâmetro "categoria"
+                  imagem={item.imagem}      // utilizando o atributo "imagem" do item atual do vetor como parâmetro "imagem"
                   ano={item.ano}            // utilizando o atributo "ano" do item atual do vetor como parâmetro "ano"
                 />
               );
