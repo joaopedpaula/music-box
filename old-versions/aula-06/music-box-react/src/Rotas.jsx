@@ -1,8 +1,6 @@
 import React from 'react';
-
-import Menu from './components/Menu';
-
 import Home from './pages/Home'; 
+import Menu from './components/Menu'; 
 import Musicas from "./pages/Musicas";
 import NotFound from './pages/NotFound';
 import Adicionar from "./pages/Adicionar";
@@ -28,8 +26,8 @@ function Rotas() {
             <Routes> {/* Este é o agrupador de rotas, do react-router-dom */}
                 <Route path="/" element={<Home />}/> {/* Rota com o caminho "/", que ao acessar "http://localhost:3000/", renderizará o elemento/componente "Home.jsx" */}
                 <Route path="/musicas" element={<Musicas />}/> {/* Rota com o caminho "/musicas", que ao acessar "http://localhost:3000/musicas", renderizará o elemento/componente "Musicas.jsx" */}
-                <Route path="/adicionar" element={<Adicionar />} /> {/* Rota com o caminho "/adicionar", que ao acessar "http://localhost:3000/adicionar", renderizará o elemento/componente "Adicionar.jsx" */}
-                <Route path="*" element={<NotFound />} /> {/* Rota com caminho "*", que renderizará o componente NotFound caso o navegador acesse QUALQUER ROTA NÃO DEFINIDA OU DECLARADA NA APLICAÇÃO (como "/moranguete", por exemplo, que retornará o NotFound) */}
+                <Route path="/adicionar" element={<Adicionar />} /> {/* Rota com o caminho "/", que ao acessar "http://localhost:3000/adicionar", renderizará o elemento/componente "Adicionar.jsx" */}
+                <Route path="*" element={<NotFound />} /> {/* Rota com caminho "*", que renderizará o componente NotFound caso o navegador acesse qualquer rota diferente das rotas declaradas na aplicação (como /moranguete, por exemplo, retornará o NotFound) */}
             </Routes>
         </BrowserRouter>
     </>
