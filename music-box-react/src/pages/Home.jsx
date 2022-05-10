@@ -1,8 +1,13 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import pinkWaves from '../html-css-template/imagens/sound-waves-pink.png'
 
 function Home() {
+
+  const navegador = useNavigate(); // criando instância do useNavigate para navegarmos entre as rotas
+  
   return (
     <>
       <div className="container index">
@@ -16,7 +21,7 @@ function Home() {
               </p>
             </div>
             <div className="img-index"></div>
-            <button className="btn">começar</button>
+            <button className="btn" onClick={() => navegador('/musicas')}>começar</button>
           </div>
           <img src={pinkWaves} alt="" className="index-img" />
         </div>
